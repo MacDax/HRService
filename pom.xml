@@ -1,89 +1,128 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.springb.hrservice</groupId>
-  <artifactId>humanresourceapp</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>com.springb.hrservice</groupId>
+	<artifactId>humanresourceapp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <name>humanresourceapp</name>
-  <url>http://maven.apache.org</url>
+	<name>humanresourceapp</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
-    
+	<properties>
+
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	
-  </properties>
 
-  <dependencies>
-    <dependency>
-    <groupId>com.spring.boot.framework.common</groupId>
-	<artifactId>dbdelegate</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
-  	<dependency>
-  	<groupId>com.fasterxml.jackson.datatype</groupId>
-	<artifactId>jackson-datatype-jsr310</artifactId>
-	<version>2.10.1</version>
-  	</dependency>
-  	<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->
-<!-- <dependency>
-    <groupId>org.glassfish.jersey.core</groupId>
-    <artifactId>jersey-common</artifactId>
-    <version>3.0.0-M6</version>
-</dependency> -->
+	</properties>
 
-<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
-<dependency>
-    <groupId>javax.inject</groupId>
-    <artifactId>javax.inject</artifactId>
-    <version>1</version>
-</dependency>
-	
-	<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
-<dependency>
-    <groupId>javax.ws.rs</groupId>
-    <artifactId>javax.ws.rs-api</artifactId>
-    <version>2.1.1</version>
-</dependency>
-	
-
-  	<dependency>
-  	<groupId>org.hibernate.validator</groupId>
-	<artifactId>hibernate-validator</artifactId>
-	<version>6.0.17.Final</version>
-    </dependency>
-    <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.0.1.RELEASE</version>
+	<dependencies>
+		<dependency>
+			<groupId>com.spring.boot.framework.common</groupId>
+			<artifactId>dbdelegate</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		 <dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->
+		<!-- <dependency> <groupId>org.glassfish.jersey.core</groupId> <artifactId>jersey-common</artifactId> 
+			<version>3.0.0-M6</version> </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<!-- <scope>provided</scope> -->
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.17.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet-core -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.32</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>2.32</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-server -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>2.32</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-common</artifactId>
+			<version>2.32</version>
+		</dependency>
+
+
+
+		<dependency>
 			<groupId>org.eclipse.microprofile.config</groupId>
 			<artifactId>microprofile-config-api</artifactId>
 			<version>1.2.1</version>
 			<scope>compile</scope>
 		</dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  
-  <build>
-  	<resources>
-  	<resource>
-  		<directory>src/main/resources</directory>
-  		<filtering>true</filtering>
-  		</resource>
-  	</resources>
-  	
-  	
-  	<pluginManagement>
+
+		<!-- Internal Core framework -->
+		<dependency>
+			<groupId>com.spring.boot.framework.common</groupId>
+			<artifactId>core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+
+		<pluginManagement>
 			<plugins>
 				<plugin>
 					<artifactId>maven-war-plugin</artifactId>
@@ -99,11 +138,11 @@
 					</configuration>
 				</plugin>
 				<plugin>
-				  <groupId>org.springframework.boot</groupId>
-				  <artifactId>spring-boot-maven-plugin</artifactId>
-				  <configuration>
-				  	<mainClass>com.springb.hrservice.configuration.Main</mainClass>
-				  </configuration>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<configuration>
+						<mainClass>com.springb.hrservice.configuration.Main</mainClass>
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -114,13 +153,13 @@
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>2.7</version>
 					<configuration>
-						<delimiter>@</delimiter>					
-					<useDefaultDelimiters>false</useDefaultDelimiters>
+						<delimiter>@</delimiter>
+						<useDefaultDelimiters>false</useDefaultDelimiters>
 					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
-  	
-  </build>
-  
+
+	</build>
+
 </project>

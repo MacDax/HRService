@@ -6,6 +6,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
+//http://localhost:9093/personalservice/v1/persons
+
 @Path("persons")
 public class JAXRSResource {
 
