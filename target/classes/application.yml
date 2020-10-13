@@ -1,0 +1,13 @@
+server:
+   port: 9093
+   servlet:
+      context-path: /personalservice
+      
+logging:
+   level:
+      org.hiernate.SQL: DEBUG
+      org.springframework.web.client: TRACE
+      org.springframework.http.client: DEBUG
+      org.springframework.security: TRACE
+      org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
