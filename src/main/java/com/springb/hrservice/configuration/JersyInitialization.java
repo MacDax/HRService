@@ -19,12 +19,12 @@ public class JersyInitialization implements ServletContextInitializer {
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		Set<Class<?>> x = new HashSet<>();
 		ServiceLoader<JerseyServletContainerConfigurationProvider> y = ServiceLoader.load(JerseyServletContainerConfigurationProvider.class);
+		//System.out.println("y :  " + y.iterator().hasNext());
 		try{
 			for(JerseyServletContainerConfigurationProvider o : y) {
 				x.addAll(o.getConfigurationClasses());
 			}
 		}catch(ServiceConfigurationError localServiceConfigurationError) {		}
-		
 		new JerseyServletContainerInitializer().onStartup(x, servletContext);
 	}
 

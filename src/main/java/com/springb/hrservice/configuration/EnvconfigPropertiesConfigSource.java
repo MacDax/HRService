@@ -1,4 +1,4 @@
-package com.springb.hrservice.configuration;
+/*package com.springb.hrservice.configuration;
 
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
@@ -9,3 +9,4 @@ public class EnvconfigPropertiesConfigSource {
 	
 	Config config = ConfigProvider.getConfig();
 }
+*/
