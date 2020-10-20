@@ -28,14 +28,14 @@
 			<artifactId>jackson-datatype-jsr310</artifactId>
 			<version>2.10.1</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-    <version>2.3.2.RELEASE</version>
-</dependency>
-		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.3.2.RELEASE</version>
+		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
 		<dependency>
@@ -69,11 +69,11 @@
 		</dependency>
 
 		<dependency>
-	<groupId>javax.servlet</groupId>
-	<artifactId>javax.servlet-api</artifactId>
-	<version>3.1.0</version>
-	<scope>provided</scope>
-</dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -96,20 +96,20 @@
 			<version>2.32</version>
 		</dependency>
 
-<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.ext/jersey-spring4 -->
-<dependency>
-    <groupId>org.glassfish.jersey.ext</groupId>
-    <artifactId>jersey-spring4</artifactId>
-    <version>2.26</version>
-    <scope>compile</scope>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.ext/jersey-spring4 -->
+		<dependency>
+			<groupId>org.glassfish.jersey.ext</groupId>
+			<artifactId>jersey-spring4</artifactId>
+			<version>2.26</version>
+			<scope>compile</scope>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.inject/jersey-hk2 -->
-<dependency>
-    <groupId>org.glassfish.jersey.inject</groupId>
-    <artifactId>jersey-hk2</artifactId>
-    <version>2.26</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.inject/jersey-hk2 -->
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>2.26</version>
+		</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client -->
@@ -133,6 +133,20 @@
 			<version>2.32</version>
 		</dependency>
 
+		<!-- registers Jackson providers -->
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>2.32</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-moxy -->
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-moxy</artifactId>
+    <version>2.28</version>
+</dependency>
+		
 
 
 		<dependency>
