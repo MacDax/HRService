@@ -23,21 +23,33 @@ public class PersonalResourceDelegate {
 	@Inject
 	private PersonalHRService personalHRService;
 	
+	public Response savePersonsList(List<Person> personsList) {
+		boolean result = personalHRService.savePersonsData(personsList);
+		if(result) {
+			logger.info("data saved");
+			Response rs = Response.ok().build();
+			return rs;
+		}
+		PersonalHRResponse personalHRResponse = populateErrorMessage();
+		Response rs = Response.ok().entity(personalHRResponse).build();
+		return rs;
+	}
+	
 	public Response getPersonsList() throws Exception {
 		logger.info("get data list through delegate");
 		List<PersonalDTO> dataList = personalHRService.getPersonDataList();
-		logger.info("dataList size : " + dataList.size());
+		logger.info("dataList size : " + dataList.size());		
 		
-		PersonalHRResponse personalHRResponse = null;
-		if(null == dataList) {
-			personalHRResponse = populateErrorMessage();
-		}
-		personalHRResponse = populatePersonsData(dataList);
+		PersonalHRResponse personalHRResponse = populatePersonsData(dataList);
 		Response rs = Response.ok().entity(personalHRResponse).build();
 		return rs;
 	}
 
 	private PersonalHRResponse populatePersonsData(List<PersonalDTO> dataList) {
+		if(null == dataList) {
+			PersonalHRResponse personalHRResponse = populateErrorMessage();
+			return personalHRResponse;
+		}
 		List<Person> hrPersonsList = new ArrayList<>();
 		dataList.stream().forEach(persondt -> {
 			Person person = new Person();
