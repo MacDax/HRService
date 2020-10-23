@@ -1,4 +1,4 @@
-package com.springb.hrservice.configuration;
+/*package com.springb.hrservice.configuration;
 
 import java.util.Optional;
 
@@ -16,3 +16,4 @@ public class EnvConfigUtil {
 		return propertyValue.orElseGet(() -> defaultValue);
 	}
 }
+*/
