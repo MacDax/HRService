@@ -1,5 +1,6 @@
 package com.springb.hrservice.to.domain;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -17,6 +18,7 @@ public class Person {
 	private String address;
 	//@JsonProperty("services")
 	private List<Occupationservices> services;
+	private LocalDate birthDate;
 
 	public int getId() {
 		return id;
@@ -58,11 +60,22 @@ public class Person {
 		this.services = services;
 	}
 
+	
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
+	}
+
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", fname=" + fname + ", lname=" + lname + ", address=" + address + ", services="
-				+ services + "]";
+				+ services + ", birthDate=" + birthDate + "]";
 	}
+
+	
 
 	
 }

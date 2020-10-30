@@ -27,7 +27,9 @@ public class PersonalResourceDelegate {
 		boolean result = personalHRService.savePersonsData(personsList);
 		if(result) {
 			logger.info("data saved");
-			Response rs = Response.ok().build();
+			PersonalHRResponse personalHRResponse = new PersonalHRResponse();
+			personalHRResponse.setStatus("Success");
+			Response rs = Response.ok().entity(personalHRResponse).build();
 			return rs;
 		}
 		PersonalHRResponse personalHRResponse = populateErrorMessage();

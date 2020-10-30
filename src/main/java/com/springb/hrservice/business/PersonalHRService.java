@@ -35,6 +35,7 @@ public class PersonalHRService {
 			PersonalDTO personDTO = new PersonalDTO();
 			personDTO.setFname(person.getFname());
 			personDTO.setLname(person.getLname());
+			personDTO.setBirthDate(person.getBirthDate());
 			dataList.add(personDTO);
 		});
 		try {
