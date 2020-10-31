@@ -27,7 +27,28 @@ public class JAXRSResource {
 	private PersonalResourceDelegate personalResourceDelegate;
 	private static final Logger logger = LoggerFactory.getLogger(JAXRSResource.class);
 	
+	
+	//servicesData
 	@GET
+	@Path("/services")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getServicesData(@Context UriInfo uriIfo) {
+		logger.info("get servicesData");
+		Response response = null;
+		try{
+			response = personalResourceDelegate.getServicesData();
+			return response;
+		}catch(SQLException e) {
+			logger.info(e.getMessage());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return response;
+	}
+	
+	
+	@GET
+	@Path("/personsdata")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response index(@Context UriInfo uriInfo) throws Exception {
 		logger.info("in index getJAXResource ");
@@ -42,6 +63,7 @@ public class JAXRSResource {
 	}
 	
 	@POST
+	@Path("/personsdata")
 	//@Accepts(MediaType.APPLICATION_JSON)
 	public Response saveData(@Context UriInfo uriInfo, List<Person> personData) {
 		logger.info("input personData : " + personData.toString());

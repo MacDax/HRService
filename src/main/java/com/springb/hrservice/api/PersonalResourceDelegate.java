@@ -11,9 +11,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.spring.boot.personsdb.transactions.PersonalDTO;
+import com.spring.boot.personsdb.transactions.ServicesDTO;
 import com.springb.hrservice.business.ErrorMessages;
+import com.springb.hrservice.business.HRServicesDataResponse;
+import com.springb.hrservice.business.HRServicesDataService;
 import com.springb.hrservice.business.PersonalHRResponse;
 import com.springb.hrservice.business.PersonalHRService;
+import com.springb.hrservice.to.domain.Occupationservices;
 import com.springb.hrservice.to.domain.Person;
 
 @ManagedBean
@@ -22,7 +26,40 @@ public class PersonalResourceDelegate {
 	private static final Logger logger = LoggerFactory.getLogger(PersonalResourceDelegate.class);
 	@Inject
 	private PersonalHRService personalHRService;
+	@Inject
+	private HRServicesDataService hrServicesData;
 	
+	public Response getServicesData() throws Exception {
+		logger.info("get services data : ");
+		List<ServicesDTO> servicesList = hrServicesData.getServicesList();
+		HRServicesDataResponse serviceResponse = populateServicesData(servicesList);
+		Response rs = Response.ok().entity(serviceResponse).build();
+		return rs;
+	}
+	
+	private HRServicesDataResponse populateServicesData(List<ServicesDTO> servicesList) {
+		if(null == servicesList) {
+			HRServicesDataResponse response = new HRServicesDataResponse();
+			response.setStatus("Failure");
+			return response;
+		}
+		
+		HRServicesDataResponse servicesResponse = new HRServicesDataResponse();
+		List<Occupationservices> occServices = new ArrayList<>();
+		servicesList.stream().forEach(servicedt -> {
+			Occupationservices os = new Occupationservices();
+			os.setId(servicedt.getServiceId());
+			os.setServiceName(servicedt.getServiceName());
+			logger.info("service name : " + servicedt.getServiceName() + " id : " + servicedt.getServiceId() + " "
+					+ " type : " + servicedt.getServiceType());
+			os.setServiceType(servicedt.getServiceType());
+			occServices.add(os);
+		});
+		servicesResponse.setServices(occServices);
+		servicesResponse.setStatus("Success");
+		return servicesResponse;
+	}
+
 	public Response savePersonsList(List<Person> personsList) {
 		boolean result = personalHRService.savePersonsData(personsList);
 		if(result) {

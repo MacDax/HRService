@@ -3,6 +3,8 @@ package com.springb.hrservice.to.domain;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -18,6 +20,8 @@ public class Person {
 	private String address;
 	//@JsonProperty("services")
 	private List<Occupationservices> services;
+	@DateTimeFormat(pattern = "MM/dd/yyyy")
+	@JsonProperty("birthDate")
 	private LocalDate birthDate;
 
 	public int getId() {
